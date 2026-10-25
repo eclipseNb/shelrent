@@ -1,0 +1,355 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+:root {
+    --paper: #EEE5D8;
+    --cream: #FBF7F1;
+    --ink: #2B211A;
+    --muted: #6B5A4B;
+    --accent: #A0663C;
+    --accent-dark: #87522A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ШАПКА САЙТА (АДАПТИРОВАННАЯ В ОДИН РЯД) */
+.site-header {
+    background-color: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 3.5vw, 24px);
+    padding: 14px 10px;
+}
+
+.header-container a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.header-container a.nav-phone-link {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ГЛАВНАЯ ОБЛОЖКА */
+.hero-section {
+    background-color: var(--paper);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-facts {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* КАТАЛОГ КВАРТИР */
+.catalog-section {
+    padding: 60px 0;
+}
+
+.catalog-section h2, .features-section h2, .nearby-section h2, .map-section h2, .booking-form-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.apartment-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-placeholder {
+    background-color: #e2d7c7;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.price b {
+    font-size: 1.4rem;
+    color: var(--accent-dark);
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 5px 0 15px;
+}
+
+.desc {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-book {
+    display: block;
+    text-align: center;
+    background-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* ЧТО ВНУТРИ */
+.features-section {
+    background-color: #F5EDE2;
+    padding: 60px 0;
+}
+
+.section-lead {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.5);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+/* РЯДОМ С ДОМОМ */
+.nearby-section {
+    padding: 60px 0;
+}
+
+.nearby-list {
+    list-style: none;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.nearby-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* КАРТА */
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.map-desc {
+    margin-bottom: 15px;
+}
+
+.btn-map {
+    display: inline-block;
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.map-placeholder {
+    background-color: #ebdcb9;
+    height: 350px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ФОРМА */
+.booking-form-section {
+    background-color: var(--paper);
+    padding: 60px 0;
+}
+
+.main-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-form input, .main-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.15);
+    font-size: 1rem;
+    width: 100%;
+}
+
+.main-form textarea {
+    height: 100px;
+}
+
+.btn-submit {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ПОДВАЛ */
+.site-footer {
+    background-color: #2E241C;
+    color: #EDE3D5;
+    padding: 40px 0;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 1.2rem;
+}
+
+.footer-brand p, .footer-bottom {
+    font-size: 0.85rem;
+    color: #B7A692;
+}
+
+.footer-contacts a {
+    color: #EDE3D5;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+/* ЛЕТАЮЩАЯ КНОПКА НАВЕРХ */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 46px;
+    height: 46px;
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 640px) {
+    .scroll-top-btn {
+        bottom: 32px;
+        right: 32px;
+        width: 42px;
+        height: 42px;
+    }
+}
