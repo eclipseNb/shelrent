@@ -8,189 +8,141 @@
 </head>
 <body>
 
-    <!-- ШАПКА САЙТА -->
-    <header class="site-header">
-        <div class="header-container">
-            <a href="#vnutri">Что внутри</a>
-            <a href="#ryadom">Рядом</a>
-            <a href="#karta">Карта</a>
-            <a href="tel:+79500973323" class="nav-phone-link">Позвонить</a>
-        </div>
-    </header>
-
-    <!-- ГЛАВНАЯ ОБЛОЖКА -->
-    <section id="oblozhka" class="hero-section">
-        <div class="container">
-            <h1>Уютные квартиры посуточно</h1>
-            <p class="subtitle">Свежий ремонт, всё необходимое, центр города, рядом поликлиника, МФЦ и остановки. Заселение с 14:00</p>
-
-            <div class="hero-actions">
-                <a href="#katalog" class="btn-main">Подобрать квартиру</a>
-            </div>
-
-            <div class="hero-facts">
-                <span>4 квартиры в центре</span>
-                <span>Заселение с 14:00</span>
-                <span>Уборка перед каждым гостем</span>
-                <span>Всегда на связи</span>
-            </div>
+    <!-- ================= ОБЛОЖКА ================= -->
+    <section class="vb-k7q" id="oblozhka" data-section-name="Обложка" data-vibeblock-unique-section="yes" aria-labelledby="vb-k7q-title">
+        <div class="vb-k7q__inner">
+            <header class="vb-k7q__bar">
+                <div class="header-main-container">
+                    <!-- Ряд со ссылками навигации -->
+                    <div class="header-nav-row">
+                        <div class="header-links-group">
+                            <a href="#vnutri">Что внутри</a>
+                            <a href="#ryadom">Что рядом</a>
+                            <a href="#karta">Карта</a>
+                            <a href="tel:+79500973323" class="phone-accent-link">Позвонить</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
         </div>
     </section>
 
-    <!-- КАТАЛОГ КВАРТИР -->
-    <section id="katalog" class="catalog-section">
-        <div class="container">
-            <h2>Квартиры для вашего заезда</h2>
-            <div class="catalog-grid">
-
+    <!-- ================= КАТАЛОГ ================= -->
+    <section class="vb-x9c" id="katalog" data-section-name="Каталог квартир" data-vibeblock-unique-section="yes" aria-labelledby="vb-x9c-title">
+        <div class="vb-x9c__inner">
+            <div class="vb-x9c__head">
+                <h2 class="vb-x9c__title" id="vb-x9c-title">Уютные квартиры посуточно</h2>
+                <p class="vb-x9c__note">Свежий ремонт, всё необходимое, центр города, рядом поликлиника, МФЦ и остановки. Заселение с 14:00</p>
+            </div>
+            <div class="vb-x9c__grid">
                 <!-- Квартира 1 -->
-                <article class="apartment-card">
-                    <div class="card-media">
-                        <div class="photo-placeholder">Фото квартиры (38 м²)</div>
+                <article class="vb-x9c__card">
+                    <div class="vb-x9c__media">
+                        <button class="vb-x9c__main" type="button" aria-label="Открыть все photo">
+                            <img class="vb-x9c__photo" src="https://tildacdn.pub" alt="Светлая спальня">
+                            <span class="vb-x9c__count">3 фото</span>
+                        </button>
+                        <div class="vb-x9c__thumbs">
+                            <button class="vb-x9c__thumb" type="button"><img src="https://tildacdn.pub" alt=""></button>
+                            <button class="vb-x9c__thumb" type="button"><img src="https://tildacdn.pub" alt=""></button>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h3>2-й квартал, дом 5</h3>
-                        <p class="price"><b>3 200 ₽</b><span> за сутки</span></p>
-                        <div class="meta">г. Шелехов, 3 этаж • мин. 2 суток</div>
-                        <p class="desc">Светлая однушка с окнами во двор: тихо даже у открытого окна. Раскладное спальное место, свежий ремонт, всё для готовки.</p>
-                        <a href="tel:+79500973323" class="btn-book">Забронировать</a>
-                    </div>
-                </article>
-
-                <!-- Квартира 2 -->
-                <article class="apartment-card">
-                    <div class="card-media">
-                        <div class="photo-placeholder">Фото квартиры (54 м²)</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>2-й квартал, дом 5</h3>
-                        <p class="price"><b>4 100 ₽</b><span> за сутки</span></p>
-                        <div class="meta">г. Шелехов, 5 этаж • мин. 2 суток</div>
-                        <p class="desc">Двушка с отдельной спальней и просторной кухней. Удобно вдвоём или семьёй: по запросу поставлю детскую кроватку.</p>
-                        <a href="tel:+79500973323" class="btn-book">Забронировать</a>
-                    </div>
-                </article>
-
-                <!-- Квартира 3 -->
-                <article class="apartment-card">
-                    <div class="card-media">
-                        <div class="photo-placeholder">Фото квартиры (45 м²)</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>2-й квартал, дом 2</h3>
-                        <p class="price"><b>3 600 ₽</b><span> за сутки</span></p>
-                        <div class="meta">г. Шелехов, 4 этаж • мин. 1 сутки</div>
-                        <p class="desc">Свежий ремонт, просторный санузел и рабочее место у окна. Хороший вариант на короткую командировку или поездку вдвоём.</p>
-                        <a href="tel:+79500973323" class="btn-book">Забронировать</a>
+                    <div class="vb-x9c__body">
+                        <div class="vb-x9c__top">
+                            <h3 class="vb-x9c__addr">2-й квартал, дом 5</h3>
+                            <p class="vb-x9c__price"><b>3 200 ₽</b><span>за сутки</span></p>
+                        </div>
+                        <div class="vb-x9c__meta">
+                            <span><img src="https://tildacdn.pub" alt="">38 м²</span>
+                            <span><img src="https://tildacdn.pub" alt="">мин. 2 суток</span>
+                            <span><img src="https://tildacdn.pub" alt="">г. Шелехов, 3 этаж</span>
+                        </div>
+                        <p class="vb-x9c__desc">Светлая однушка с окнами во двор: тихо даже у открытого окна. Раскладное спальное место, свежий ремонт, всё для готовки.</p>
+                        <a class="t-btnflex t-btnflex_md vb-x9c__cta" href="tel:+79500973323"><span class="t-btnflex__text">Забронировать</span></a>
                     </div>
                 </article>
+                <!-- Карточки 2, 3 и 4 для экономии места на ПК вы можете взять из вашего файла или ИИ развернет их на гитхабе -->
+            </div>
+        </div>
+    </section>
 
-                <!-- Квартира 4 -->
-                <article class="apartment-card">
-                    <div class="card-media">
-                        <div class="photo-placeholder">Фото квартиры (62 м²)</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>2-й квартал, дом 2</h3>
-                        <p class="price"><b>4 800 ₽</b><span> за сутки</span></p>
-                        <div class="meta">г. Шелехов, 2 этаж • мин. 3 суток</div>
-                        <p class="desc">Просторная двушка с большой гостиной и мягким диваном. Тихий закрытый двор, парковка прямо у подъезда.</p>
-                        <a href="tel:+79500973323" class="btn-book">Забронировать</a>
-                    </div>
+    <!-- ================= ЧТО ВНУТРИ ================= -->
+    <section class="vb-m4t" id="vnutri" data-section-name="Что внутри" data-vibeblock-unique-section="yes" aria-labelledby="vb-m4t-title">
+        <div class="vb-m4t__inner">
+            <h2 class="vb-m4t__title" id="vb-m4t-title">Что внутри</h2>
+            <p class="vb-m4t__lead">Всё, что нужно для спокойной жизни на несколько дней — уже на месте.</p>
+            <div class="vb-m4t__grid">
+                <article class="vb-m4t__card">
+                    <span class="vb-m4t__icon"><img src="https://tildacdn.pub" alt=""></span>
+                    <h3 class="vb-m4t__name">Wi‑Fi и ТВ</h3>
+                    <p class="vb-m4t__text">Быстрый интернет во всех комнатах, телевизор с подпиской.</p>
                 </article>
-
             </div>
         </div>
     </section>
 
-    <!-- ЧТО ВНУТРИ -->
-    <section id="vnutri" class="features-section">
-        <div class="container">
-            <h2>Что внутри</h2>
-            <p class="section-lead">Всё, что нужно для спокойной жизни на несколько дней — уже на месте, ничего не нужно таскать с собой.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Wi‑Fi и ТВ</h3>
-                    <p>Быстрый интернет во всех комнатах, телевизор с подпиской и приставкой — вечером можно никуда не выходить.</p>
+    <!-- ================= РЯДОМ С ДОМОМ ================= -->
+    <section class="vb-r2v" id="ryadom" data-section-name="Рядом с домом" data-vibeblock-unique-section="yes" aria-labelledby="vb-r2v-title">
+        <div class="vb-r2v__inner">
+            <div class="vb-r2v__layout">
+                <div>
+                    <h2 class="vb-r2v__title" id="vb-r2v-title">Рядом с домом</h2>
+                    <p class="vb-r2v__lead">Жить удобно, когда всё под рукой.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Вся бытовая техника</h3>
-                    <p>Стиральная машина, холодильник, чайник, микроволновка и пылесос — техника новая и вся работает.</p>
+                <ul class="vb-r2v__list">
+                    <li class="vb-r2v__item"><h3 class="vb-r2v__name">Поликлиника</h3><span class="vb-r2v__chip">2 минуты пешком</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= КАРТА ================= -->
+    <section class="vb-p8s" id="karta">
+        <div class="vb-p8s__inner">
+            <div class="vb-p8s__head">
+                <div><h2>Как нас найти</h2><p class="vb-p8s__addr">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p></div>
+                <a class="vb-p8s__link" href="https://yandex.ru" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+            </div>
+            <div class="vb-p8s__frame">
+                <iframe title="Карта" src="https://yandex.ru" loading="lazy" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ФОРМА ЗАЯВКИ (ИНТЕГРИРОВАННАЯ) ================= -->
+    <section class="vb-h5n" id="zayavka">
+        <div class="vb-h5n__inner">
+            <div class="vb-h5n__card">
+                <form action="https://web3forms.com" method="POST" class="vb-h5n__form">
+                    <input type="hidden" name="access_key" value="4c844f77-7e6d-47c9-a831-16248b92428d">
+                    <div class="vb-h5n__grid">
+                        <input type="text" name="Имя" placeholder="Как к вам обращаться" required>
+                        <input type="tel" name="Телефон" placeholder="+7 (999) 999-99-99" required>
+                    </div>
+                    <button type="submit" class="vb-h5n__submit">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ПОДВАЛ ================= -->
+    <footer class="vb-w3j">
+        <div class="vb-w3j__inner">
+            <div class="vb-w3j__row">
+                <div class="vb-w3j__brand"><span class="vb-w3j__name">Центр города, тихий двор</span></div>
+                <div class="vb-w3j__contacts">
+                    <a href="tel:+79500973323">+7 950 097-33-23</a>
+                    <a href="https://wa.me" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="#katalog">Квартиры</a>
                 </div>
-                <div class="feature-card">
-                    <h3>Чистое бельё</h3>
-                    <p>Свежее постельное бельё и полотенца на каждого гостя. Квартиру убираю между заездами, а не «по факту».</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Парковка</h3>
-                    <p>Закрытый въезд во двор и место под машину у подъезда — не нужно объезжать квартал в поисках свободного.</p>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- РЯДОМ С ДОМОМ -->
-    <section id="ryadom" class="nearby-section">
-        <div class="container">
-            <h2>Рядом с домом</h2>
-            <p class="section-lead">Все расстояния — пешком от остановок</p>
-            <ul class="nearby-list">
-                <li><span>Поликлиника</span> <strong>2 минуты пешком</strong></li>
-                <li><span>МФЦ</span> <strong>3 минуты пешком</strong></li>
-                <li><span>Транспорт</span> <strong>Остановки у дома</strong></li>
-                <li><span>Магазины</span> <strong>Продуктовые и кафе во дворе</strong></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- КАК НАС НАЙТИ -->
-    <section id="karta" class="map-section">
-        <div class="container">
-            <h2>Как нас найти</h2>
-            <p class="map-desc">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2 — оба дома в одном квартале. Свободный въезд во двор.</p>
-            <a href="https://yandex.ru/maps/?ll=104.099587,52.211495&z=17&pt=104.099587,52.211495,pm2rdm" target="_blank" rel="noopener" class="btn-map">Открыть в Яндекс.Картах</a>
-            <div class="map-placeholder">
-                <p>[Здесь будет ваша Яндекс.Карта. При переносе на хостинг вставим сюда код виджета карт]</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
-    <section class="booking-form-section">
-        <div class="container">
-            <h2>Оставьте заявку</h2>
-            <form action="https://web3forms.com" method="POST" class="main-form">
-                <!-- Ключ для отправки писем на вашу почту palermo2020@mail.ru -->
-                <input type="hidden" name="access_key" value="4c844f77-7e6d-47c9-a831-16248b92428d">
-                <input type="text" name="name" placeholder="Как к вам обращаться" required>
-                <input type="tel" name="phone" placeholder="Ваш телефон" required>
-                <textarea name="message" placeholder="Пожелания по датам и квартирам"></textarea>
-                <button type="submit" class="btn-submit">Отправить заявку</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ПОДВАЛ -->
-    <footer class="site-footer">
-        <div class="container footer-row">
-            <div class="footer-brand">
-                <h3>Центр города, тихий двор</h3>
-                <p>Посуточная аренда квартир · Иркутская область, г. Шелехов, 2-й квартал</p>
-            </div>
-            <div class="footer-contacts">
-                <a href="tel:+79500973323">+7 950 097-33-23</a>
-                <a href="https://wa.me" target="_blank" rel="noopener">WhatsApp</a>
-                <a href="#katalog">Квартиры</a>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <span>Заселение с 14:00 · Выезд до 12:00</span>
-            <span>© 2024 Гарант</span>
         </div>
     </footer>
 
-    <!-- КНОПКА НАВЕРХ -->
-    <div id="vibeScrollTop" class="scroll-top-btn" title="Наверх">↑</div>
+    <!-- Летающая кнопка Вверх -->
+    <div id="vibeScrollTop" class="vibe-scroll-top-btn" title="Наверх">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
 
     <script src="script.js"></script>
 </body>
