@@ -1,4 +1,3 @@
-javascript
 window.addEventListener("load", function () {
     
     // --- Навигация по якорям ---
@@ -18,23 +17,32 @@ window.addEventListener("load", function () {
         });
     })();
 
-    // --- Кнопка "Наверх" (Пункт 3) ---
+    // --- Кнопка "Наверх" (Исправлено для iOS Safari) ---
     (function() {
         var btn = document.getElementById('vibeScrollTop');
         if (!btn) return;
         
         window.addEventListener('scroll', function() {
-            // Реагирует на скролл более 250px
-            if (window.pageYOffset > 250) {
+            var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrolled > 300) {
                 btn.classList.add('is-visible');
             } else {
                 btn.classList.remove('is-visible');
             }
         });
         
+        // Жесткий и надежный метод скролла для мобильного Safari
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            e.stopPropagation();
+            
+            // Пробуем современный метод, если Safari капризничает — переключаем на классический
+            try {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (err) {
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }
         });
     })();
 
