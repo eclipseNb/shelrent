@@ -227,9 +227,13 @@
                 <img src="https://tildacdn.pub" alt="">
                 Открыть на Яндекс.Картах
             </a>
+            
+            <!-- Контейнер карты -->
             <div class="vb-p8s__frame">
-                <script type="text/javascript" charset="utf-8" async src="https://yandex.ru"></script>
+                <!-- Вставляем стабильный iframe вместо капризного скрипта -->
+                <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="display:block;"></iframe>
             </div>
+            
             <div class="vb-p8s__caption">
                 <span>Парковка во дворе</span>
                 <span>Остановка рядом</span>
