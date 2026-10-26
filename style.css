@@ -10,7 +10,7 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-x9c__inner, 
 .vb-m4t__inner, 
 .vb-r2v__inner, 
-.vb-p8s__inner, 
+.map-container, 
 .vb-w3j__inner { 
     width: 100%; 
     max-width: 1220px; 
@@ -33,9 +33,9 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-k7q__bar a, 
 .header-phone-link {
     font-size: clamp(13px, 3.8vw, 15px) !important;
-    color: #6B5A4B !important; /* Строго одинаковый серый цвет для всего меню */
+    color: #6B5A4B !important; /* Серый цвет для всех пунктов меню */
     text-decoration: none !important;
-    font-weight: 500 !important; /* Убираем жирность, делаем шрифт аккуратным */
+    font-weight: 500 !important; /* Аккуратный не жирный шрифт */
     white-space: nowrap !important;
     transition: color 0.2s ease;
 }
@@ -104,8 +104,8 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-m4t__card { background: rgba(255, 255, 255, .05); border: 1px solid rgba(242, 233, 220, .16); border-radius: 20px; padding: 20px; }
 .vb-m4t__icon { width: 48px; height: 48px; border-radius: 50%; background: #F3E8DC; display: grid; place-items: center; margin-bottom: 16px; }
 .vb-m4t__icon img { width: 27px !important; height: 27px !important; }
-.vb-m4t__name { font-family: Georgia, serif; font-size: 18px; margin: 0 0 6px 0; }
-.vb-m4t__text { margin: 0; font-size: 14px; color: #CFC0AC; line-height: 1.4; }
+.vb-m4t__name { font-family: Georgia, serif; font-size: 18px; margin: 0; color: #F2E9DC; }
+.vb-m4t__text { margin: 11px 0 0; font-size: 14px; color: #CFC0AC; line-height: 1.4; }
 
 /* ================= РЯДОМ С ДОМОМ ================= */
 .vb-r2v { background-color: #E8DDCC; color: #2B211A; padding: 50px 0; }
@@ -121,85 +121,13 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-r2v__name { font-family: Georgia, serif; font-size: 15.5px; margin: 0; flex-grow: 1; min-width: 0; word-wrap: break-word; }
 .vb-r2v__chip { background: rgba(160, 102, 60, .14); color: #87522A; font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; flex-shrink: 0; }
 
-/* ================= КАРТА ================= */
-.vb-p8s { background: #F3ECE2; padding: 40px 0; }
-.vb-p8s__title { font-family: Georgia, serif; font-size: 24px; margin: 0 0 6px 0; }
-.vb-p8s__addr { margin: 0 0 16px 0; color: #5F5044; font-size: 14.5px; }
-.vb-p8s__link { display: inline-flex; align-items: center; font-size: 14.5px; font-weight: 600; color: #87522A; text-decoration: none; margin-bottom: 20px; }
-.vb-p8s__link img { width: 18px !important; height: 18px !important; margin-right: 6px; }
-
-.vb-p8s__frame { 
-    border-radius: 20px; 
-    overflow: hidden; 
-    border: 1px solid rgba(43, 33, 26, .1); 
-    height: 350px !important; 
-    width: 100% !important; 
-    position: relative;
-    background: #E7DCCB; 
-}
-.vb-p8s__frame ymaps { max-width: 100% !important; height: 100% !important; }
-.vb-p8s__caption { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-size: 15px; color: #5F5044; }
-.vb-p8s__caption span { display: inline-flex; align-items: center; gap: 9px; }
-.vb-p8s__caption span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #A0663C; opacity: .75; }
-
-/* ПОДВАЛ */
-.vb-w3j { background: #2E241C; color: #EDE3D5; padding: 32px 0; }
-.vb-w3j__row { display: flex; flex-direction: column; gap: 20px; }
-@media (min-width: 768px) { .vb-w3j__row { flex-direction: row; justify-content: space-between; } }
-.vb-w3j__brand { display: flex; flex-direction: column; gap: 4px; }
-.vb-w3j__name { font-family: Georgia, serif; font-size: 18px; }
-.vb-w3j__tag { font-size: 13px; color: #B7A692; }
-.vb-w3j__contacts { display: flex; gap: 16px; }
-.vb-w3j__contacts a { color: #EDE3D5 !important; text-decoration: none; font-size: 14.5px; }
-.vb-w3j__legal { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(237, 227, 213, .16); font-size: 12.5px; color: #B7A692; display: flex; justify-content: space-between; }
-
-/* ================= ЛЕТАЮЩАЯ КНОПКА НАВЕРХ ДЛЯ IOS SAFARI ================= */
-.vibe-scroll-top-btn {
-    position: fixed !important;
-    bottom: 30px !important;
-    right: 20px !important;
-    width: 48px !important;
-    height: 48px !important;
-    background-color: #A0663C !important;
-border-radius: 50% !important;
-display: flex !important;
-align-items: center !important;
-justify-content: center !important;
-cursor: pointer !important;
-z-index: 9999999 !important;
-opacity: 0 !important;
-visibility: hidden !important;
--webkit-appearance: none;
--webkit-transform: translate3d(0,0,0);
-transform: translate3d(0,0,0);
-transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
-box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
-}
-.vibe-scroll-top-btn.is-visible {
-opacity: 1 !important;
-visibility: visible !important;
-}
-.vibe-scroll-top-btn svg {
-width: 18px !important;
-height: 18px !important;
-fill: none !important;
-stroke: #FFF7EE !important;
-stroke-width: 3 !important;
-stroke-linecap: round !important;
-stroke-linejoin: round !important;
-display: block !important;
-}
-/* ================= СТИЛИ ДЛЯ НОВОГО БЛОКА КАРТЫ ================= */
+/* ================= СТИЛИ ДЛЯ НОВОГО БЛОКА КАРТЫ 2ГИС ================= */
 .section-map {
     background-color: #F3ECE2;
     padding: 50px 0;
     width: 100%;
 }
 .map-container {
-    width: 100%;
-    max-width: 1220px;
-    margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 24px) !important;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -233,62 +161,15 @@ display: block !important;
     margin: 0 !important;
 }
 
-/* Стильный и стопроцентно рабочий контейнер карты */
-.map-static-wrapper {
-    display: block;
-    width: 100%;
-    height: 350px;
+/* Навечно фиксируем размеры и адаптивность окна карты 2ГИС */
+.map-viewport {
+    width: 100% !important;
+    height: 380px !important;
     border-radius: 24px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 16px 36px rgba(58, 45, 35, 0.12);
+    box-shadow: 0 16px 36px rgba(58, 45, 35, 0.1);
+    background-color: #f5f5f5;
     border: 1px solid rgba(43, 33, 26, 0.08);
-    text-decoration: none;
-}
-.map-static-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    transition: transform 0.5s ease !important;
-}
-.map-static-wrapper:hover .map-static-img {
-    transform: scale(1.03) !important;
-}
-
-/* Красивое затемнение и кнопка при наведении */
-.map-static-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(43, 33, 26, 0.2);
-    display: grid;
-    place-items: center;
-    transition: background-color 0.3s ease;
-    padding: 20px;
-}
-.map-static-wrapper:hover .map-static-overlay {
-    background: rgba(43, 33, 26, 0.35);
-}
-.map-overlay-btn {
-    background: #FCF9F4;
-    color: #2B211A;
-    padding: 14px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 14.5px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-.map-static-wrapper:hover .map-overlay-btn {
-    transform: scale(1.03);
-}
-.map-overlay-btn img {
-    width: 16px !important;
-    height: 16px !important;
-    margin: 0 !important;
 }
 
 .map-features {
@@ -301,3 +182,55 @@ display: block !important;
 }
 .map-features span { display: inline-flex; align-items: center; gap: 8px; }
 .map-features span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background-color: #A0663C; flex-shrink: 0; }
+
+/* ПОДВАЛ */
+.vb-w3j { background: #2E241C; color: #EDE3D5; padding: 32px 0; }
+.vb-w3j__row { display: flex; flex-direction: column; gap: 20px; }
+@media (min-width: 768px) { .vb-w3j__row { flex-direction: row; justify-content: space-between; } }
+.vb-w3j__brand { display: flex; flex-direction: column; gap: 4px; }
+.vb-w3j__name { font-family: Georgia, serif; font-size: 18px; }
+.vb-w3j__tag { font-size: 13px; color: #B7A692; }
+.vb-w3j__contacts { display: flex; gap: 16px; }
+.vb-w3j__contacts a { color: #EDE3D5 !important; text-decoration: none; font-size: 14.5px; }
+.vb-w3j__legal { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(237, 227, 213, .16); font-size: 12.5px; color: #B7A692; display: flex; justify-content: space-between; }
+/* ================= ЛЕТАЮЩАЯ КНОПКА НАВЕРХ ДЛЯ IOS SAFARI ================= */
+.vibe-scroll-top-btn {
+position: fixed !important;
+bottom: 30px !important;
+right: 20px !important;
+width: 48px !important;
+height: 48px !important;
+background-color: #A0663C !important;
+border-radius: 50% !important;
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+cursor: pointer !important;
+z-index: 9999999 !important;
+opacity: 0 !important;
+visibility: hidden !important;
+-webkit-appearance: none;
+-webkit-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
+box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+.vibe-scroll-top-btn.is-visible {
+opacity: 1 !important;
+visibility: visible !important;
+}
+.vibe-scroll-top-btn svg {
+width: 18px !important;
+height: 18px !important;
+fill: none !important;
+stroke: #FFF7EE !important;
+stroke-width: 3 !important;
+stroke-linecap: round !important;
+stroke-linejoin: round !important;
+display: block !important;
+}
+/* Финальные каскадные исправления */
+.vb-x9c__card { color: #2B211A; }
+.vb-x9c__body { background: #FCF9F4; color: #2B211A; }
+.vb-x9c__addr { color: #2B211A; }
+.vb-w3j__contacts > a { color: #EDE3D5; }
