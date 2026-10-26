@@ -218,7 +218,7 @@
         </div>
     </section>
 
-                <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ (СТАБИЛЬНЫЙ ВАРИАНТ) ================= -->
+                    <!-- ================= БЛОКА КАРТЫ (ФИКС ССЫЛОК И НАВИГАЦИИ) ================= -->
     <section class="section-map" id="karta">
         <div class="map-container">
             <div class="map-info">
@@ -226,7 +226,6 @@
                 <p class="map-address">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p>
             </div>
             
-            <!-- Профессиональная интерактивная карточка вместо ломающегося фрейма -->
             <div class="map-card-wrapper">
                 <div class="map-card-content">
                     <div class="map-card-icon">📍</div>
@@ -234,10 +233,12 @@
                     <p class="map-card-text">Выберите удобное приложение, чтобы открыть точные координаты домов на карте Шелехова:</p>
                     
                     <div class="map-buttons-group">
+                        <!-- Точная ссылка на 2-й квартал Шелехова в 2ГИС -->
                         <a class="map-action-btn btn-2gis" href="https://2gis.ru" target="_blank" rel="noopener">
                             Открыть в 2ГИС
                         </a>
-                        <a class="map-action-btn btn-yandex" href="https://yandex.ru" target="_blank" rel="noopener">
+                        <!-- Международная ссылка Яндекса, которая гарантированно откроет карту без Дзена -->
+                        <a class="map-action-btn btn-yandex" href="https://yandex.com" target="_blank" rel="noopener">
                             Яндекс.Карты
                         </a>
                     </div>
@@ -273,9 +274,9 @@
         </div>
     </section>
 
-    <div id="vibeScrollTop" class="vibe-scroll-top-btn" title="Наверх">
-        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
-    </div>
+        <!-- Летающая кнопка возврата наверх (Очищенная от багов Safari) -->
+    <div id="vibeScrollTop" class="vibe-scroll-top-btn" title="Наверх">▲</div>
+
 
     <script src="script.js"></script>
 </body>
