@@ -189,3 +189,82 @@ stroke-linecap: round !important;
 stroke-linejoin: round !important;
 display: block !important;
 }
+/* ================= СТИЛИ ДЛЯ НОВОГО БЛОКА КАРТЫ ================= */
+.section-map {
+    background-color: #F3ECE2;
+    padding: 50px 0;
+    width: 100%;
+}
+.map-container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 24px) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.map-title {
+    font-family: Georgia, serif;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin: 0 0 8px 0;
+    color: #2B211A;
+}
+.map-address {
+    margin: 0 0 12px 0;
+    color: #5F5044;
+    font-size: 15px;
+    line-height: 1.4;
+}
+.map-yandex-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #87522A;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(135, 82, 42, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+}
+.map-yandex-link:hover {
+    border-bottom-color: #87522A;
+}
+.map-yandex-link img {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Навечно фиксируем размеры и адаптивность окна карты */
+.map-viewport {
+    width: 100% !important;
+    height: 380px !important; /* Комфортная высота и для Mac, и для экрана смартфона */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(58, 45, 35, 0.1);
+    background-color: #E7DCCB;
+    border: 1px solid rgba(43, 33, 26, 0.08);
+}
+
+.map-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 4px;
+    font-size: 14.5px;
+    color: #5F5044;
+}
+.map-features span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.map-features span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #A0663C;
+    flex-shrink: 0;
+}
