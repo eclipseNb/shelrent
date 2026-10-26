@@ -218,23 +218,24 @@
         </div>
     </section>
 
-    <!-- ================= КАРТА ================= -->
-    <section class="vb-p8s" id="karta">
-        <div class="vb-p8s__inner">
-            <h2 class="vb-p8s__title">Как нас найти</h2>
-            <p class="vb-p8s__addr">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p>
-            <a class="vb-p8s__link" href="https://yandex.ru" target="_blank" rel="noopener">
-                <img src="https://tildacdn.pub" alt="">
-                Открыть на Яндекс.Картах
-            </a>
-            
-                        <!-- Контейнер карты -->
-            <div class="vb-p8s__frame">
-                <!-- Прямой виджет по координатам, который разрешен на любых доменах мира -->
-                <iframe src="https://yandex.ru" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="display:block; border:0;"></iframe>
+       <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ ================= -->
+    <section class="section-map" id="karta">
+        <div class="map-container">
+            <div class="map-info">
+                <h2 class="map-title">Как нас найти</h2>
+                <p class="map-address">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p>
+                <a class="map-yandex-link" href="https://yandex.ru" target="_blank" rel="noopener">
+                    <img src="https://tildacdn.pub" alt="Маркер">
+                    <span>Открыть на Яндекс.Картах</span>
+                </a>
             </div>
             
-            <div class="vb-p8s__caption">
+            <!-- Полностью изолированный и независимый слой карты -->
+            <div class="map-viewport">
+                <iframe src="https://yandex.ru" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="true"></iframe>
+            </div>
+            
+            <div class="map-features">
                 <span>Парковка во дворе</span>
                 <span>Остановка рядом</span>
                 <span>Заселение с 14:00</span>
