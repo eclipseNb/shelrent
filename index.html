@@ -218,28 +218,22 @@
         </div>
     </section>
 
-          <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ (БЕЗ IFRAME И ОШИБОК) ================= -->
+             <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ (ИНТЕГРАЦИЯ 2ГИС) ================= -->
     <section class="section-map" id="karta">
         <div class="map-container">
             <div class="map-info">
                 <h2 class="map-title">Как нас найти</h2>
                 <p class="map-address">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p>
-                <a class="map-yandex-link" href="https://yandex.ru" target="_blank" rel="noopener">
+                <a class="map-yandex-link" href="https://2gis.ru" target="_blank" rel="noopener">
                     <img src="https://tildacdn.pub" alt="Маркер">
-                    <span>Открыть в Яндекс.Навигаторе</span>
+                    <span>Открыть в приложении 2ГИС</span>
                 </a>
             </div>
             
-            <!-- Вместо ломающегося iframe — кликабельная интерактивная карта-изображение -->
-            <a class="map-static-wrapper" href="https://yandex.ru" target="_blank" rel="noopener" title="Кликните, чтобы построить маршрут">
-                <img src="https://tildacdn.pub" class="map-static-img" alt="Карта Шелехов 2-й квартал">
-                <div class="map-static-overlay">
-                    <div class="map-overlay-btn">
-                        <img src="https://tildacdn.pub" alt="Локация">
-                        Посмотреть на карте / Проложить маршрут
-                    </div>
-                </div>
-            </a>
+            <!-- Официальный и стабильный интерактивный виджет 2ГИС для Шелехова -->
+            <div class="map-viewport">
+                <iframe src="https://2gis.ru" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="true"></iframe>
+            </div>
             
             <div class="map-features">
                 <span>Парковка во дворе</span>
