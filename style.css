@@ -226,25 +226,69 @@ display: block !important;
     text-decoration: none;
     border-bottom: 1px solid rgba(135, 82, 42, 0.3);
     padding-bottom: 2px;
-    transition: border-color 0.2s ease;
-}
-.map-yandex-link:hover {
-    border-bottom-color: #87522A;
 }
 .map-yandex-link img {
     width: 18px !important;
     height: 18px !important;
+    margin: 0 !important;
 }
 
-/* Навечно фиксируем размеры и адаптивность окна карты */
-.map-viewport {
-    width: 100% !important;
-    height: 380px !important; /* Комфортная высота и для Mac, и для экрана смартфона */
+/* Стильный и стопроцентно рабочий контейнер карты */
+.map-static-wrapper {
+    display: block;
+    width: 100%;
+    height: 350px;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 16px 36px rgba(58, 45, 35, 0.1);
-    background-color: #E7DCCB;
+    position: relative;
+    box-shadow: 0 16px 36px rgba(58, 45, 35, 0.12);
     border: 1px solid rgba(43, 33, 26, 0.08);
+    text-decoration: none;
+}
+.map-static-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.5s ease !important;
+}
+.map-static-wrapper:hover .map-static-img {
+    transform: scale(1.03) !important;
+}
+
+/* Красивое затемнение и кнопка при наведении */
+.map-static-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(43, 33, 26, 0.2);
+    display: grid;
+    place-items: center;
+    transition: background-color 0.3s ease;
+    padding: 20px;
+}
+.map-static-wrapper:hover .map-static-overlay {
+    background: rgba(43, 33, 26, 0.35);
+}
+.map-overlay-btn {
+    background: #FCF9F4;
+    color: #2B211A;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14.5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.map-static-wrapper:hover .map-overlay-btn {
+    transform: scale(1.03);
+}
+.map-overlay-btn img {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
 }
 
 .map-features {
@@ -255,16 +299,5 @@ display: block !important;
     font-size: 14.5px;
     color: #5F5044;
 }
-.map-features span {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-.map-features span::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #A0663C;
-    flex-shrink: 0;
-}
+.map-features span { display: inline-flex; align-items: center; gap: 8px; }
+.map-features span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background-color: #A0663C; flex-shrink: 0; }
