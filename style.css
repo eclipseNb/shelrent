@@ -1,3 +1,4 @@
+css
 /* ================= ГЛОБАЛЬНЫЕ СТИЛИ И СБРОС СТИЛЕЙ ================= */
 * { box-sizing: border-box; }
 body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -121,7 +122,7 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-r2v__name { font-family: Georgia, serif; font-size: 15.5px; margin: 0; flex-grow: 1; min-width: 0; word-wrap: break-word; }
 .vb-r2v__chip { background: rgba(160, 102, 60, .14); color: #87522A; font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; flex-shrink: 0; }
 
-/* ================= СТИЛИ ДЛЯ НОВОГО БЛОКА КАРТЫ (СТАБИЛЬНЫЙ ВАРИАНТ) ================= */
+/* ================= СТИЛИ ДЛЯ БЛОКА КАРТЫ С КНОПКАМИ НАВИГАТОРОВ ================= */
 .section-map {
     background-color: #F3ECE2;
     padding: 50px 0;
@@ -145,7 +146,6 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
     line-height: 1.4;
 }
 
-/* Красивая карточка-заглушка в фирменном стиле сайта */
 .map-card-wrapper {
     width: 100%;
     background-color: #FCF9F4;
@@ -165,36 +165,13 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
     flex-direction: column;
     align-items: center;
 }
-.map-card-icon {
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-.map-card-heading {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    color: #2B211A;
-    margin: 0 0 8px 0;
-}
-.map-card-text {
-    font-size: 14.5px;
-    color: #5F5044;
-    line-height: 1.5;
-    margin: 0 0 24px 0;
-}
+.map-card-icon { font-size: 36px; margin-bottom: 12px; }
+.map-card-heading { font-family: Georgia, serif; font-size: 20px; color: #2B211A; margin: 0 0 8px 0; }
+.map-card-text { font-size: 14.5px; color: #5F5044; line-height: 1.5; margin: 0 0 24px 0; }
 
-/* Кнопки выбора навигатора */
-.map-buttons-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-@media (min-width: 480px) {
-    .map-buttons-group {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
+.map-buttons-group { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+@media (min-width: 480px) { .map-buttons-group { flex-direction: row; justify-content: center; } }
+
 .map-action-btn {
     display: inline-flex;
     justify-content: center;
@@ -207,40 +184,59 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
     transition: transform 0.2s ease, background-color 0.2s ease;
     width: 100%;
 }
-@media (min-width: 480px) {
-    .map-action-btn {
-        width: auto;
-    }
-}
-.map-action-btn:hover {
-    transform: translateY(-2px);
-}
+@media (min-width: 480px) { .map-action-btn { width: auto; } }
+.map-action-btn:hover { transform: translateY(-2px); }
 
-/* Стилизация под бренды */
-.btn-2gis {
-    background-color: #24C562;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px 20px rgba(36, 197, 98, 0.25);
-}
-.btn-2gis:hover {
-    background-color: #1eb357;
-}
-.btn-yandex {
-    background-color: #E63946;
-    color: #FFFFFF !important;
-    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
-}
-.btn-yandex:hover {
-    background-color: #d62837;
-}
-
-.map-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-    margin-top: 4px;
-    font-size: 14.5px;
-    color: #5F5044;
-}
+.btn-2gis { background-color: #24C562; color: #FFFFFF !important; box-shadow: 0 8px 20px rgba(36, 197, 98, 0.25); }
+.btn-2gis:hover { background-color: #1eb357; }
+.btn-yandex { background-color: #E63946; color: #FFFFFF !important; box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25); }
+.btn-yandex:hover { background-color: #d62837; }
+.map-features { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 4px; font-size: 14.5px; color: #5F5044; }
 .map-features span { display: inline-flex; align-items: center; gap: 8px; }
 .map-features span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background-color: #A0663C; flex-shrink: 0; }
+/* ПОДВАЛ */
+.vb-w3j { background: #2E241C; color: #EDE3D5; padding: 32px 0; }
+.vb-w3j__row { display: flex; flex-direction: column; gap: 20px; }
+@media (min-width: 768px) { .vb-w3j__row { flex-direction: row; justify-content: space-between; } }
+.vb-w3j__brand { display: flex; flex-direction: column; gap: 4px; }
+.vb-w3j__name { font-family: Georgia, serif; font-size: 18px; }
+.vb-w3j__tag { font-size: 13px; color: #B7A692; }
+.vb-w3j__contacts { display: flex; gap: 16px; }
+.vb-w3j__contacts a { color: #EDE3D5 !important; text-decoration: none; font-size: 14.5px; }
+.vb-w3j__legal { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(237, 227, 213, .16); font-size: 12.5px; color: #B7A692; display: flex; justify-content: space-between; }
+/* ================= ЛЕТАЮЩАЯ КНОПКА НАВЕРХ ИСПРАВЛЕННАЯ ================= */
+.vibe-scroll-top-btn {
+position: fixed !important;
+bottom: 30px !important;
+right: 20px !important;
+width: 46px !important;
+height: 46px !important;
+background-color: #A0663C !important;
+border-radius: 50% !important;
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+cursor: pointer !important;
+z-index: 9999999 !important;
+opacity: 0 !important;
+visibility: hidden !important;
+/* Стили для текстовой стрелочки юникода */
+color: #FFF7EE !important;
+font-size: 15px !important;
+line-height: 1 !important;
+text-align: center !important;
+-webkit-appearance: none;
+-webkit-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
+box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+.vibe-scroll-top-btn.is-visible {
+opacity: 1 !important;
+visibility: visible !important;
+}
+/* Финальные каскадные исправления */
+.vb-x9c__card { color: #2B211A; }
+.vb-x9c__body { background: #FCF9F4; color: #2B211A; }
+.vb-x9c__addr { color: #2B211A; }
+.vb-w3j__contacts > a { color: #EDE3D5; }
