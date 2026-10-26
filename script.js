@@ -1,8 +1,7 @@
 javascript
-// Гарантируем, что скрипт сработает только ПОСЛЕ полной загрузки структуры страницы
 window.addEventListener("load", function () {
     
-    // --- Плавный скролл для меню навигации ---
+    // --- Навигация по якорям ---
     (function () {
         var root = document.getElementById('oblozhka');
         if (!root) return;
@@ -19,7 +18,27 @@ window.addEventListener("load", function () {
         });
     })();
 
-    // --- Интерактивная галерея квартир (Lightbox) ---
+    // --- Кнопка "Наверх" (Пункт 3) ---
+    (function() {
+        var btn = document.getElementById('vibeScrollTop');
+        if (!btn) return;
+        
+        window.addEventListener('scroll', function() {
+            // Реагирует на скролл более 250px
+            if (window.pageYOffset > 250) {
+                btn.classList.add('is-visible');
+            } else {
+                btn.classList.remove('is-visible');
+            }
+        });
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+
+    // --- Лайтбокс галереи ---
     (function () {
         var root = document.getElementById('katalog');
         if (!root) return;
@@ -27,91 +46,39 @@ window.addEventListener("load", function () {
         if (!lb) return;
         var imgEl = lb.querySelector('.vb-x9c__lb-img');
         var titleEl = lb.querySelector('.vb-x9c__lb-title');
-        var counterEl = lb.querySelector('.vb-x9c__lb-counter');
         var closeBtn = lb.querySelector('.vb-x9c__lb-close');
-        var prevBtn = lb.querySelector('.vb-x9c__lb-prev');
-        var nextBtn = lb.querySelector('.vb-x9c__lb-next');
         var veil = lb.querySelector('.vb-x9c__lb-veil');
         var cards = root.querySelectorAll('.vb-x9c__card');
         var photos = [];
         var index = 0;
-        var isOpen = false;
 
         function render() {
             var item = photos[index];
             if (!item) return;
             imgEl.src = item.src;
-            imgEl.alt = item.alt;
-            counterEl.textContent = (index + 1) + ' / ' + photos.length;
-        }
-
-        function openLb() {
-            if (!photos.length) return;
-            isOpen = true;
-            lb.classList.add('is-open');
-            render();
-        }
-
-        function hideLb() {
-            isOpen = false;
-            lb.classList.remove('is-open');
-        }
-
-        function move(step) {
-            if (photos.length < 2) return;
-            index = (index + step + photos.length) % photos.length;
-            render();
         }
 
         Array.prototype.forEach.call(cards, function (card) {
             card.addEventListener('click', function (event) {
-                if (event.target && event.target.closest && event.target.closest('a')) return;
+                if (event.target && event.target.closest('a')) return;
                 var media = card.querySelector('.vb-x9c__media');
                 var addr = card.querySelector('.vb-x9c__addr');
                 var collected = [];
                 if (media) {
                     Array.prototype.forEach.call(media.querySelectorAll('img'), function (node) {
-                        collected.push({ src: node.src, alt: node.alt || '' });
+                        collected.push({ src: node.src });
                     });
                 }
                 if (!collected.length) return;
                 photos = collected;
                 index = 0;
                 titleEl.textContent = addr ? addr.textContent.trim() : '';
-                openLb();
+                lb.classList.add('is-open');
+                render();
             });
         });
 
-        if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); move(-1); });
-        if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); move(1); });
-        if (closeBtn) closeBtn.addEventListener('click', hideLb);
-        if (veil) veil.addEventListener('click', hideLb);
-
-        document.addEventListener('keydown', function (event) {
-            if (!isOpen) return;
-            if (event.key === 'Escape') hideLb();
-            else if (event.key === 'ArrowLeft') move(-1);
-            else if (event.key === 'ArrowRight') move(1);
-        });
-    })();
-
-    // --- Логика появления и работы кнопки "Наверх" ---
-    (function() {
-        var btn = document.getElementById('vibeScrollTop');
-        if (!btn) return;
-        
-        // Отслеживаем скролл страницы
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                btn.classList.add('is-visible');
-            } else {
-                btn.classList.remove('is-visible');
-            }
-        });
-        
-        // Клик по кнопке плавно перемещает в самый верх
-        btn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        if (closeBtn) closeBtn.addEventListener('click', function() { lb.classList.remove('is-open'); });
+        if (veil) veil.addEventListener('click', function() { lb.classList.remove('is-open'); });
     })();
 });
