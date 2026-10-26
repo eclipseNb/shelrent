@@ -218,7 +218,7 @@
         </div>
     </section>
 
-       <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ ================= -->
+          <!-- ================= НОВЫЙ БЛОК: КАК НАС НАЙТИ (БЕЗ IFRAME И ОШИБОК) ================= -->
     <section class="section-map" id="karta">
         <div class="map-container">
             <div class="map-info">
@@ -226,17 +226,20 @@
                 <p class="map-address">Иркутская область, г. Шелехов, 2-й квартал, дома 5 и 2.</p>
                 <a class="map-yandex-link" href="https://yandex.ru" target="_blank" rel="noopener">
                     <img src="https://tildacdn.pub" alt="Маркер">
-                    <span>Открыть на Яндекс.Картах</span>
+                    <span>Открыть в Яндекс.Навигаторе</span>
                 </a>
             </div>
             
-                        <!-- Полностью изолированный и независимый слой карты -->
-                     <!-- Полностью изолированный и независимый слой карты -->
-            <div class="map-viewport">
-                <!-- Используем официальный экспортный домен Конструктора карт Яндекса, разрешенный для iframe -->
-                <iframe src="https://yandex.ru" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="true"></iframe>
-            </div>
-
+            <!-- Вместо ломающегося iframe — кликабельная интерактивная карта-изображение -->
+            <a class="map-static-wrapper" href="https://yandex.ru" target="_blank" rel="noopener" title="Кликните, чтобы построить маршрут">
+                <img src="https://tildacdn.pub" class="map-static-img" alt="Карта Шелехов 2-й квартал">
+                <div class="map-static-overlay">
+                    <div class="map-overlay-btn">
+                        <img src="https://tildacdn.pub" alt="Локация">
+                        Посмотреть на карте / Проложить маршрут
+                    </div>
+                </div>
+            </a>
             
             <div class="map-features">
                 <span>Парковка во дворе</span>
@@ -245,6 +248,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- ================= ПОДВАЛ ================= -->
     <section class="vb-w3j">
