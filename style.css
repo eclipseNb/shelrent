@@ -5,7 +5,7 @@ body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; font-family: 
 /* Принудительный показ значков и картинок */
 img { opacity: 1 !important; visibility: visible !important; display: inline-block; }
 
-/* ================= 1) АДАПТИВНЫЕ БОКОВЫЕ ОТСТУПЫ ДЛЯ БЛОКОВ ================= */
+/* ================= АДАПТИВНЫЕ БОКОВЫЕ ОТСТУПЫ ДЛЯ ВСЕХ БЛОКОВ ================= */
 .vb-k7q__inner, 
 .vb-x9c__inner, 
 .vb-m4t__inner, 
@@ -15,10 +15,10 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
     width: 100%; 
     max-width: 1220px; 
     margin: 0 auto; 
-    padding: 0 clamp(16px, 4vw, 24px) !important; /* Текст больше не будет прилипать к краям */
+    padding: 0 clamp(16px, 4vw, 24px) !important;
 }
 
-/* ================= 5) НАВИГАЦИОННАЯ ШАПКА И ЕДИНЫЙ СТИЛЬ ШРИФТА ================= */
+/* ================= НАВИГАЦИОННАЯ ШАПКА И ЕДИНЫЙ СТИЛЬ ШРИФТА ================= */
 .vb-k7q { background-color: #EEE5D8; padding-bottom: 0px !important; }
 .vb-k7q__bar { padding: 16px 0; width: 100%; }
 .vb-k7q__bar > div {
@@ -30,15 +30,17 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
     gap: 8px !important;
     width: 100% !important;
 }
-.vb-k7q__bar a {
-    font-size: clamp(13px, 3.5vw, 15px) !important;
-    color: #6B5A4B !important; /* Единый цвет для всех ссылок, включая Позвонить */
+.vb-k7q__bar a, 
+.header-phone-link {
+    font-size: clamp(13px, 3.8vw, 15px) !important;
+    color: #6B5A4B !important; /* Строго одинаковый серый цвет для всего меню */
     text-decoration: none !important;
-    font-weight: 500 !important; /* Единая толщина для всех ссылок */
+    font-weight: 500 !important; /* Убираем жирность, делаем шрифт аккуратным */
     white-space: nowrap !important;
     transition: color 0.2s ease;
 }
-.vb-k7q__bar a:hover { color: #87522A !important; }
+.vb-k7q__bar a:hover, 
+.header-phone-link:hover { color: #87522A !important; }
 
 /* ================= КАТАЛОГ КВАРТИР ================= */
 .vb-x9c {
@@ -52,28 +54,26 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-x9c__title { font-family: Georgia, serif; font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 0 0 8px 0; }
 .vb-x9c__note { font-size: 14.5px; color: #67564A; margin: 0; line-height: 1.4; }
 .vb-x9c__grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-.vb-x9c__card { display: flex; flex-direction: column; background: var(--cream); border: 1px solid rgba(43, 33, 26, .08); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(58, 45, 35, 0.12); }
+.vb-x9c__card { display: flex; flex-direction: column; background: var(--cream); border: 1px solid rgba(43, 33, 26, .08); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(58, 45, 35, 0.12); color: #2B211A !important; }
 
-/* --- 3) ВОЗВРАТ ЭФФЕКТА SCALE НА ВСЕ ТРИ ФОТО КАРТОЧКИ --- */
+/* Анимация увеличения при наведении (эффект Live Photo) */
 .vb-x9c__media { background: #E7DCCB; position: relative; overflow: hidden; }
 .vb-x9c__main { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; aspect-ratio: 16 / 10; overflow: hidden; cursor: zoom-in; }
 .vb-x9c__thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; background: #EFE7DA; overflow: hidden; }
 .vb-x9c__thumb { padding: 0; border: 0; background: #E7DCCB; aspect-ratio: 16 / 10; overflow: hidden; }
 
-/* Плавный переход для абсолютно всех картинок в карточке */
 .vb-x9c__card img { 
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important; 
 }
-/* При наведении на карточку увеличиваются ВСЕ три фотографии одновременно */
 .vb-x9c__card:hover .vb-x9c__main img,
 .vb-x9c__card:hover .vb-x9c__thumb img {
     transform: scale(1.05) !important;
 }
 
-/* Мета-параметры квартир */
-.vb-x9c__body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; background: #FCF9F4; }
+/* Мета-данные карточек */
+.vb-x9c__body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; background: #FCF9F4 !important; }
 .vb-x9c__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-.vb-x9c__addr { font-family: Georgia, serif; font-size: 18px; margin: 0; color: #2B211A; }
+.vb-x9c__addr { font-family: Georgia, serif; font-size: 18px; margin: 0; color: #2B211A !important; }
 .vb-x9c__price { text-align: right; margin: 0; }
 .vb-x9c__price b { display: block; font-family: Georgia, serif; font-size: 19px; color: #87522A; }
 .vb-x9c__price span { font-size: 13px; color: #67564A; }
@@ -85,7 +85,7 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-x9c__cta { display: flex; justify-content: center; align-items: center; width: 100%; padding: 14px 0; text-decoration: none; background: #A0663C; color: #FFF7EE !important; border-radius: 96px; font-size: 16px; font-weight: 600; margin-top: auto; text-align: center; transition: background-color 0.2s ease; }
 .vb-x9c__cta:hover { background: #87522A; }
 
-/* Окно просмотра (Lightbox) */
+/* Окно лайтбокса */
 .vb-x9c__lb { position: fixed; inset: 0; z-index: 9999999; display: none; align-items: center; justify-content: center; padding: 16px; }
 .vb-x9c__lb.is-open { display: flex; }
 .vb-x9c__lb-veil { position: absolute; inset: 0; background: rgba(28, 21, 16, .95); backdrop-filter: blur(4px); }
@@ -121,14 +121,13 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-r2v__name { font-family: Georgia, serif; font-size: 15.5px; margin: 0; flex-grow: 1; min-width: 0; word-wrap: break-word; }
 .vb-r2v__chip { background: rgba(160, 102, 60, .14); color: #87522A; font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; flex-shrink: 0; }
 
-/* ================= 4) ИСПРАВЛЕНИЕ ОТОБРАЖЕНИЯ КАРТЫ ================= */
+/* ================= КАРТА ================= */
 .vb-p8s { background: #F3ECE2; padding: 40px 0; }
 .vb-p8s__title { font-family: Georgia, serif; font-size: 24px; margin: 0 0 6px 0; }
 .vb-p8s__addr { margin: 0 0 16px 0; color: #5F5044; font-size: 14.5px; }
 .vb-p8s__link { display: inline-flex; align-items: center; font-size: 14.5px; font-weight: 600; color: #87522A; text-decoration: none; margin-bottom: 20px; }
 .vb-p8s__link img { width: 18px !important; height: 18px !important; margin-right: 6px; }
 
-/* Выделяем жесткую высоту контейнеру скрипта Яндекса */
 .vb-p8s__frame { 
     border-radius: 20px; 
     overflow: hidden; 
@@ -154,24 +153,24 @@ img { opacity: 1 !important; visibility: visible !important; display: inline-blo
 .vb-w3j__contacts a { color: #EDE3D5 !important; text-decoration: none; font-size: 14.5px; }
 .vb-w3j__legal { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(237, 227, 213, .16); font-size: 12.5px; color: #B7A692; display: flex; justify-content: space-between; }
 
-/* ================= 2) НАДЕЖНАЯ ЛЕТАЮЩАЯ КНОПКА НАВЕРХ ДЛЯ IOS SAFARI ================= */
+/* ================= ЛЕТАЮЩАЯ КНОПКА НАВЕРХ ДЛЯ IOS SAFARI ================= */
 .vibe-scroll-top-btn {
     position: fixed !important;
     bottom: 30px !important;
-right: 20px !important;
-width: 48px !important;
-height: 48px !important;
-background-color: #A0663C !important;
+    right: 20px !important;
+    width: 48px !important;
+    height: 48px !important;
+    background-color: #A0663C !important;
 border-radius: 50% !important;
 display: flex !important;
 align-items: center !important;
 justify-content: center !important;
 cursor: pointer !important;
-z-index: 9999999 !important; /* Ставим абсолютный приоритет над слоями /
+z-index: 9999999 !important;
 opacity: 0 !important;
 visibility: hidden !important;
--webkit-appearance: none; / Сброс системных ограничений iOS /
--webkit-transform: translate3d(0,0,0); / Принудительный вывод в верхний графический слой */
+-webkit-appearance: none;
+-webkit-transform: translate3d(0,0,0);
 transform: translate3d(0,0,0);
 transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease !important;
 box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
